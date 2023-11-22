@@ -78,6 +78,7 @@ class DisplayImageActivity : AppCompatActivity() {
         }
     }
 
+
     private fun folderCheck() {
         val folder =
             File(
@@ -97,6 +98,7 @@ class DisplayImageActivity : AppCompatActivity() {
             Log.e("mkdir_fail", "Failed to write")
         }
     }
+
 
     private fun screenShot() {
         val filePath =
@@ -122,6 +124,7 @@ class DisplayImageActivity : AppCompatActivity() {
             e.printStackTrace()
         }
     }
+
 
     // Save the Bitmap to the device's public pictures directory (Android 10 and later)
     private fun saveBitmapToMediaStoreQ(bitmap: Bitmap) {
@@ -150,6 +153,7 @@ class DisplayImageActivity : AppCompatActivity() {
         }
     }
 
+
     private fun getBitmapFromView(view: View): Bitmap {
         val bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bitmap)
@@ -157,9 +161,11 @@ class DisplayImageActivity : AppCompatActivity() {
         return bitmap
     }
 
+
     private fun getCurrentTimestamp(): String {
         return SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
     }
+
 
     // Share function starts here
     private fun shareMediaStoreImageQ() {
@@ -186,12 +192,14 @@ class DisplayImageActivity : AppCompatActivity() {
         }
     }
 
+
     private fun shareExternalStorageImage() {
         val imagePath = Environment.getExternalStorageDirectory().toString() +
                 "/GKB_Frame_screenshots/temp.png"
         val imageFile = File(imagePath)
         shareImage(Uri.fromFile(imageFile))
     }
+
 
     private fun shareImage(imageUri: Uri) {
         val shareIntent = Intent().apply {

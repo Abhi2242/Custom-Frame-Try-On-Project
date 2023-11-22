@@ -146,6 +146,7 @@ class MainActivity : AppCompatActivity() {
             })
     }
 
+
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(this)
 
@@ -182,6 +183,7 @@ class MainActivity : AppCompatActivity() {
         }, ContextCompat.getMainExecutor(this))
     }
 
+
     // Checking camera permissions
     private fun checkMyPermission(): Boolean {
         if (ActivityCompat.checkSelfPermission(
@@ -194,6 +196,7 @@ class MainActivity : AppCompatActivity() {
         return false
     }
 
+
     // Requesting camera permissions
     private fun requestPermission() {
         ActivityCompat.requestPermissions(
@@ -204,6 +207,7 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
+
     // creates a folder inside internal storage
     private fun getOutputDirectory(): File {
         val mediaDir = externalMediaDirs.firstOrNull()?.let {
@@ -212,6 +216,7 @@ class MainActivity : AppCompatActivity() {
         return if (mediaDir != null && mediaDir.exists())
             mediaDir else filesDir
     }
+
 
     // checks the camera permission
     override fun onRequestPermissionsResult(
@@ -258,12 +263,14 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
     companion object {
         private const val TAG = "CameraXGFG"
         private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
         private const val REQUEST_CODE_PERMISSIONS = 20
         private const val REQUIRED_PERMISSIONS = 100
     }
+
 
     override fun onDestroy() {
         super.onDestroy()
