@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Frame\'s Try On By Smartgeek</string>
+    <string name="dotted_circle">dotted circle</string>
+    <string name="capture">Capture</string>
+    <string name="let_s_try_lens">Let\'s Try Frames</string>
+    <string name="capture_again">Capture Again</string>
+    <string name="image">image</string>
+    <string name="save_share">Save/Share</string>
+</resources>
