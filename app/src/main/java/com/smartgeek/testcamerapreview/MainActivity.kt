@@ -60,17 +60,15 @@ class MainActivity : AppCompatActivity() {
         view3 = findViewById(R.id.view3)
         view4 = findViewById(R.id.view4)
 
-        // Check camera permissions if permission granted
-        // start camera else ask for the permission
+        // Check camera permissions if permission granted start camera else ask for the permission
         if (checkMyPermission()) {
-            startCamera()
             showMessage()
+            startCamera()
         } else {
             requestPermission()
         }
 
-        // set on click listener for the btn_capture
-        // it calls a method which is implemented below
+        // set on click listener for the captureImage it calls a method which is implemented below
         captureImage.setOnClickListener {
             takePhoto()
         }
@@ -203,7 +201,7 @@ class MainActivity : AppCompatActivity() {
             this,
             arrayOf(
                 Manifest.permission.CAMERA
-            ), REQUIRED_PERMISSIONS
+            ), REQUEST_CODE_PERMISSIONS
         )
     }
 
@@ -227,8 +225,8 @@ class MainActivity : AppCompatActivity() {
         if (requestCode == REQUEST_CODE_PERMISSIONS) {
             // If all permissions granted , then start Camera
             if (checkMyPermission()) {
-                startCamera()
                 showMessage()
+                startCamera()
             } else {
                 // If permissions are not granted, show Toast message
                 Toast.makeText(this, "Permissions not granted.", Toast.LENGTH_SHORT).show()
@@ -265,10 +263,9 @@ class MainActivity : AppCompatActivity() {
 
 
     companion object {
-        private const val TAG = "CameraXGFG"
+        private const val TAG = "SMARTGEEK CameraX"
         private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
-        private const val REQUEST_CODE_PERMISSIONS = 20
-        private const val REQUIRED_PERMISSIONS = 100
+        private const val REQUEST_CODE_PERMISSIONS = 100
     }
 
 
